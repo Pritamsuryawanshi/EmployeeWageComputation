@@ -2,17 +2,23 @@
 
 echo "Welcome To Employee Wage Computations"
 
+
 #CONSTANT
-IS_PRESENT=1;
-EMP_RATE_PER_HR=20;
-EMP_HRS=8;
+IS_PART_TIME=1;
+IS_FULL_TIME=2;
+EMPLOYEE_RATE_PER_HOUR=20;
 
 #VARIABLE
-randomCheck=$((RANDOM%2));
+randomCheck=$((RANDOM%3));
 
-if (( $IS_PRESENT==$randomCheck ))
+if (( $IS_FULL_TIME==$randomCheck ));
 then
-	salary=$(($EMP_HRS*$EMP_RATE_PER_HR));
+	employeeHours=8;
+elif [ $IS_PART_TIME==$randomCheck ];
+then
+	employeeHours=4;
 else
-	salary=0;
+	employeeHours=0;
 fi
+
+salary=$((employeeHours*EMPLOYEE_RATE_PER_HOUR));
