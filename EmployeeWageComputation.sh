@@ -11,10 +11,10 @@ EMPLOYEE_RATE_PER_HOUR=20;
 #VARIABLE
 randomCheck=$((RANDOM%3));
 
-if (( $IS_FULL_TIME==$randomCheck ));
+if (( $IS_FULL_TIME==$randomCheck ))
 then
 	employeeHours=8;
-elif [ $IS_PART_TIME==$randomCheck ];
+elif (( $IS_PART_TIME==$randomCheck ))
 then
 	employeeHours=4;
 else
